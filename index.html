@@ -2,555 +2,522 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brennholz &amp; Garten- und Landschaftsbau – Marcel Patyk, Sprendlingen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Patyk Holz &amp; Garten – Brennholz und Garten-Landschaftsbau, Sprendlingen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#efe6d1;
-    --paper-deep:#e5d9bd;
-    --card:#f8f2e2;
-    --ink:#241d14;
-    --ink-soft:#4d4232;
-    --rust:#b8481f;
-    --rust-dark:#8c3714;
-    --mustard:#c1892c;
-    --moss:#5c6b3f;
-    --line:rgba(36,29,20,0.22);
-    --line-soft:rgba(36,29,20,0.13);
+    color-scheme:light;
+    --evergreen:#2e3b28;
+    --evergreen-soft:#44543c;
+    --linen:#f6f2e7;
+    --stone:#eae2cd;
+    --card:#fffdf6;
+    --timber:#6d4a30;
+    --timber-soft:#8a6644;
+    --moss:#5c6b45;
+    --ink:#2a2418;
+    --ink-soft:#5a5140;
+    --line:rgba(42,36,24,0.14);
+    --ease-out:cubic-bezier(0.23,1,0.32,1);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    background-image:radial-gradient(rgba(36,29,20,0.05) 1px, transparent 1px);
-    background-size:4px 4px;
+    margin:0; background:var(--linen); color:var(--ink);
+    font-family:'Manrope', sans-serif; font-size:17px; line-height:1.65;
   }
-  h1,h2,h3{font-family:'Fraunces', serif; font-weight:700; margin:0; color:inherit;}
-  .mono{font-family:'JetBrains Mono', monospace;}
+  h1,h2,h3{font-family:'Cormorant Garamond', serif; font-weight:600; margin:0; color:inherit;}
+  p{margin:0;}
   a{color:inherit;}
-  .wrap{max-width:1140px; margin:0 auto; padding:0 34px;}
-  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  .wrap{max-width:1440px; margin:0 auto; padding:0 48px;}
+  @media (max-width:640px){ .wrap{padding:0 22px;} }
+  section[id]{scroll-margin-top:90px;}
 
-  /* ---------- TICKER ---------- */
-  .ticker{
-    background:var(--ink);
-    color:var(--paper-deep);
-    overflow:hidden;
-    white-space:nowrap;
-    border-bottom:1px solid rgba(0,0,0,0.4);
+  /* ---------- HEADER ---------- */
+  header.site{position:sticky; top:0; z-index:40; background:rgba(246,242,231,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .navbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+    padding-right:env(safe-area-inset-right,0px);
   }
-  .ticker-track{
-    display:inline-flex;
-    animation:scrollTicker 26s linear infinite;
-    padding:9px 0;
-  }
-  .ticker-track span{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    letter-spacing:0.06em;
-    padding:0 22px;
-    color:var(--paper-deep);
-  }
-  .ticker-track span.mark{color:var(--rust); }
-  @keyframes scrollTicker{
-    from{transform:translateX(0);}
-    to{transform:translateX(-50%);}
-  }
-  @media (prefers-reduced-motion: reduce){ .ticker-track{animation:none;} }
-
-  /* ---------- NAV ---------- */
-  header.site{
-    position:sticky; top:0; z-index:30;
-    background:var(--paper);
-    border-bottom:2px solid var(--ink);
-  }
-  .navbar{display:flex; align-items:center; justify-content:space-between; padding:20px 0;}
-  .wordmark{font-family:'Fraunces', serif; font-weight:900; font-size:1.25rem; letter-spacing:-0.01em;}
-  .wordmark .dot{color:var(--rust);}
-  nav.links{display:flex; gap:30px;}
-  nav.links a{
-    text-decoration:none; color:var(--ink); font-size:0.9rem;
-    font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;
-    border-bottom:2px solid transparent; padding-bottom:3px;
-    transition:border-color .15s ease, color .15s ease;
-  }
-  nav.links a:hover{border-color:var(--rust);}
-  nav.links a.active{border-color:var(--rust); color:var(--rust);}
-  @media (max-width:660px){ nav.links{gap:14px; font-size:0.72rem;} }
-
-  section[id]{scroll-margin-top:120px;}
+  .wordmark{font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; text-decoration:none;}
+  nav.links{display:flex; gap:28px;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); font-size:0.94rem; border-bottom:1px solid transparent; padding-bottom:3px; transition:color 150ms ease, border-color 150ms ease;}
+  @media (hover:hover) and (pointer:fine){ nav.links a:hover{color:var(--ink); border-color:var(--timber);} }
+  nav.links a.active{color:var(--ink); border-color:var(--timber);}
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--timber); outline-offset:2px;}
+  @media (max-width:660px){ nav.links{gap:14px; font-size:0.82rem;} }
 
   /* ---------- HERO ---------- */
   .hero{
-    position:relative;
-    padding:70px 0 120px;
-    overflow:visible;
+    position:relative; overflow:hidden;
+    min-height:clamp(460px,58vw,620px);
+    display:flex; align-items:center;
   }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.3fr 0.9fr;
-    gap:40px;
-    align-items:start;
-    position:relative;
+  .hero-scene{
+    position:absolute; inset:0; width:100%; height:100%;
+    display:block; z-index:0;
   }
-  @media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} }
-
+  .hero-copy{
+    position:relative; z-index:1; width:100%;
+    padding:100px 0 56px;
+  }
+  .hero-copy .wrap{max-width:640px;}
+  @media (max-width:640px){ .hero-copy{padding:80px 0 40px;} .hero{min-height:520px;} }
   .hero-tag{
-    display:inline-block;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    letter-spacing:0.08em;
-    color:var(--rust);
-    border:1px solid var(--rust);
-    padding:5px 12px;
-    transform:rotate(-1.5deg);
-    margin-bottom:26px;
+    display:inline-block; font-size:0.86rem; color:var(--card);
+    background:rgba(46,59,40,0.55); padding:6px 14px; border-radius:999px;
+    margin-bottom:20px; backdrop-filter:blur(2px);
+    opacity:0; animation:riseIn .55s var(--ease-out) .02s forwards;
   }
   .hero h1{
-    font-size:clamp(2.6rem, 6vw, 4.6rem);
-    line-height:0.98;
-    letter-spacing:-0.015em;
-  }
-  .hero h1 .line2{
-    display:block;
-    color:var(--rust);
-    font-style:italic;
-    font-weight:500;
+    font-size:clamp(2.3rem,5.4vw,3.6rem); color:var(--card); font-style:italic; font-weight:500;
+    text-shadow:0 2px 18px rgba(20,20,10,0.35);
+    opacity:0; animation:riseIn .55s var(--ease-out) .08s forwards;
   }
   .hero p.lead{
-    margin-top:28px;
-    max-width:44ch;
-    font-size:1.14rem;
-    color:var(--ink-soft);
+    margin-top:20px; max-width:46ch; font-size:1.1rem; color:var(--card);
+    text-shadow:0 1px 12px rgba(20,20,10,0.4);
+    opacity:0; animation:riseIn .55s var(--ease-out) .15s forwards;
   }
-  .hero-actions{margin-top:38px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
-  .btn-primary{
-    background:var(--ink);
-    color:var(--paper);
-    text-decoration:none;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.92rem;
-    letter-spacing:0.03em;
-    padding:16px 30px;
-    display:inline-block;
-    position:relative;
-    transition:transform .15s ease;
-  }
-  .btn-primary:hover{transform:translate(-2px,-2px);}
-  .btn-primary::after{
-    content:'';
-    position:absolute; inset:0;
-    border:1px solid var(--ink);
-    transform:translate(6px,6px);
-    z-index:-1;
-    transition:transform .15s ease;
-  }
-  .btn-primary:hover::after{transform:translate(8px,8px);}
-  .hero-note{font-size:0.9rem; font-style:italic; font-family:'Fraunces', serif; color:var(--ink-soft);}
-
-  .badges{margin-top:44px; display:flex; gap:0; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:16px;}
-  .badge{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.75rem; letter-spacing:0.02em;
-    color:var(--ink-soft);
-    padding:6px 18px 6px 0;
-    border-right:1px solid var(--line);
-    margin-right:18px;
-  }
-  .badge:last-child{border-right:none;}
-
-  /* price stamp */
-  .stamp-wrap{
-    display:flex; justify-content:center; padding-top:18px;
-  }
-  .stamp{
-    width:230px; height:230px;
-    border-radius:50%;
-    border:2.5px dashed var(--rust);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    transform:rotate(9deg);
-    background:var(--card);
-    box-shadow:0 10px 0 -4px rgba(36,29,20,0.08);
-  }
-  .stamp .amt{
-    font-family:'Fraunces', serif; font-weight:900; font-size:2.6rem; color:var(--rust);
-    line-height:1;
-  }
-  .stamp .unit{font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:0.05em; margin-top:8px; color:var(--ink-soft); text-align:center;}
-  .stamp .kind{font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.1em; margin-top:10px; color:var(--moss); text-transform:uppercase;}
-  @media (max-width:880px){ .stamp-wrap{padding-top:8px;} .stamp{width:190px; height:190px;} }
-
-  /* ---------- SECTION SHELL ---------- */
-  section{padding:100px 0;}
-  section.dark{background:var(--ink); color:var(--paper);}
-  section.deep{background:var(--paper-deep);}
-  .diagonal-top{clip-path:polygon(0 46px, 100% 0, 100% 100%, 0 100%); margin-top:-46px; padding-top:146px;}
-  @media (max-width:700px){ .diagonal-top{clip-path:polygon(0 26px, 100% 0, 100% 100%, 0 100%); margin-top:-26px; padding-top:126px;} }
-
-  .kicker{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.8rem; letter-spacing:0.08em;
-    color:var(--rust);
-    margin-bottom:14px;
-  }
-  section.dark .kicker{color:var(--mustard);}
-  section h2{font-size:clamp(1.9rem,3.4vw,2.6rem); max-width:20ch; letter-spacing:-0.01em;}
-  section .intro{margin-top:18px; max-width:58ch; font-size:1.05rem; color:var(--ink-soft);}
-  section.dark .intro{color:#cfc4ac;}
-
-  /* ---------- WOOD TAGS ---------- */
-  .tag-grid{
-    margin-top:56px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:34px;
-  }
-  @media (max-width:820px){ .tag-grid{grid-template-columns:1fr; max-width:360px;} }
-  .wood-tag{
-    background:var(--card);
-    border:1.5px solid var(--ink);
-    padding:26px 22px 22px;
-    position:relative;
-  }
-  .wood-tag:nth-child(2){transform:rotate(1deg);}
-  .wood-tag:nth-child(1){transform:rotate(-1.3deg);}
-  .wood-tag:nth-child(3){transform:rotate(0.8deg);}
-  .wood-tag::before{
-    content:'';
-    position:absolute; top:-9px; left:50%; transform:translateX(-50%);
-    width:16px; height:16px; border-radius:50%;
-    background:var(--paper); border:1.5px solid var(--ink);
-  }
-  .wood-tag h3{font-size:1.3rem;}
-  .wood-tag p{margin:12px 0 0; font-size:0.95rem; color:var(--ink-soft);}
-  .wood-tag .spec{
-    margin-top:18px; padding-top:14px; border-top:1px dashed var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:var(--moss);
+  .hero-actions{margin-top:30px; opacity:0; animation:riseIn .55s var(--ease-out) .22s forwards;}
+  @keyframes riseIn{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){
+    .hero-tag, .hero h1, .hero p.lead, .hero-actions{animation:none !important; opacity:1 !important; transform:none !important;}
   }
 
-  .checks{margin-top:52px; display:grid; grid-template-columns:repeat(2,1fr); gap:18px 44px;}
-  @media (max-width:640px){ .checks{grid-template-columns:1fr;} }
-  .checks ul{margin:0; padding:0; list-style:none;}
-  .checks li{display:flex; gap:12px; align-items:baseline; padding:7px 0; font-size:0.98rem;}
-  .checks li .x{font-family:'JetBrains Mono', monospace; color:var(--rust);}
-
-  .pull-quote{margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; display:flex; gap:18px;}
-  .pull-quote .mark{font-family:'Fraunces', serif; font-size:3rem; color:var(--rust); line-height:0.6;}
-  .pull-quote p{font-family:'Fraunces', serif; font-style:italic; font-size:1.28rem; color:var(--ink-soft); max-width:40ch; margin:0;}
-
-  /* ---------- STEPS ---------- */
-  .steps{margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
-  .step{padding:28px 28px 28px 0; border-right:1px solid var(--line);}
-  .step:last-child{border-right:none;}
-  @media (max-width:760px){ .step{border-right:none; border-bottom:1px solid var(--line); padding:24px 0;} .step:last-child{border-bottom:none;} }
-  .step .num{font-family:'JetBrains Mono', monospace; font-size:0.85rem; color:var(--rust);}
-  .step h3{margin-top:10px; font-size:1.1rem;}
-  .step p{margin-top:9px; font-size:0.95rem; color:var(--ink-soft);}
-
-  .delivery-note{
-    margin-top:46px; background:var(--card); border:1px solid var(--ink);
-    padding:22px 26px; font-size:1rem; color:var(--ink-soft); max-width:64ch;
-    position:relative;
+  .btn{
+    background:var(--card); color:var(--ink); text-decoration:none; font-weight:600; font-size:0.98rem;
+    padding:14px 28px; border-radius:3px; display:inline-block; border:1px solid transparent;
+    transition:background 150ms ease, transform 120ms var(--ease-out);
   }
-  .delivery-note::before{content:'✎'; position:absolute; left:-14px; top:-14px; background:var(--rust); color:var(--paper); width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.9rem;}
+  @media (hover:hover) and (pointer:fine){ .btn:hover{background:var(--evergreen); color:var(--card);} }
+  .btn:active{transform:scale(0.97);}
+  .btn.dark{background:var(--evergreen); color:var(--card);}
+  @media (hover:hover) and (pointer:fine){ .btn.dark:hover{background:var(--timber);} }
 
-  /* ---------- GARDEN SERVICES ---------- */
-  .services{margin-top:56px; display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:rgba(239,230,209,0.15);}
-  @media (max-width:700px){ .services{grid-template-columns:1fr;} }
-  .service{background:var(--ink); padding:30px; border:1px solid rgba(239,230,209,0.15);}
-  .service .idx{font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:var(--mustard);}
-  .service h3{margin-top:10px; font-size:1.12rem; font-family:'Work Sans', sans-serif; font-weight:600; color:var(--paper);}
-  .service p{margin:10px 0 0; font-size:0.94rem; color:#cfc4ac;}
-
-  .placeholder-note{margin-top:40px; font-family:'JetBrains Mono', monospace; font-size:0.85rem; color:var(--mustard); max-width:60ch;}
-
-  /* ---------- CONTACT ---------- */
-  .contact-grid{margin-top:54px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:0;}
-  @media (max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
-
-  .receipt{
-    background:var(--card);
-    border:1.5px solid var(--ink);
-    padding:30px 30px 26px;
+  /* floating stat card bridging hero + content */
+  .float-card{
+    position:relative; z-index:2;
+    max-width:1440px; margin:-64px auto 0; padding:0 48px;
   }
-  .receipt-head{display:flex; align-items:center; gap:16px; border-bottom:1px dashed var(--line); padding-bottom:18px;}
-  .monogram{
-    width:52px; height:52px; border-radius:50%;
-    background:var(--rust); color:var(--paper);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces', serif; font-weight:700; font-size:1.2rem;
+  @media (max-width:640px){ .float-card{padding:0 22px; margin-top:-40px;} }
+  .float-card .inner{
+    background:var(--card); border:1px solid var(--line);
+    display:flex; flex-wrap:wrap; gap:0;
+    box-shadow:0 18px 40px -20px rgba(20,20,10,0.35);
   }
-  .receipt h3{font-size:1.2rem;}
-  .receipt .role{font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--rust);}
-  .receipt-meta{margin-top:16px;}
-  .receipt-meta div{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px dashed var(--line); font-size:0.94rem;}
-  .receipt-meta div:last-child{border-bottom:none;}
-  .receipt-meta span:first-child{font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--ink-soft);}
-  .receipt-meta span:last-child{font-weight:600;}
+  .float-card .stat{
+    flex:1 1 200px; padding:26px 28px; border-right:1px solid var(--line);
+  }
+  .float-card .stat:last-child{border-right:none;}
+  .float-card .stat strong{display:block; font-family:'Cormorant Garamond', serif; font-size:1.5rem; font-weight:600; margin-bottom:4px;}
+  .float-card .stat span{font-size:0.88rem; color:var(--ink-soft);}
+  @media (max-width:700px){ .float-card .stat{border-right:none; border-bottom:1px solid var(--line);} .float-card .stat:last-child{border-bottom:none;} }
 
-  form.contact-form{
-    background:var(--card);
-    border:1.5px solid var(--ink); border-left:none;
-    padding:30px;
-    display:flex; flex-direction:column; gap:16px;
-  }
-  @media (max-width:760px){ form.contact-form{border-left:1.5px solid var(--ink); border-top:none;} }
-  form.contact-form label{font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft); display:flex; flex-direction:column; gap:7px;}
-  form.contact-form input, form.contact-form textarea{
-    font-family:'Work Sans', sans-serif; font-size:0.98rem;
-    padding:12px 13px; border:1px solid var(--line); background:#fffdf6; color:var(--ink);
-  }
-  form.contact-form input:focus, form.contact-form textarea:focus{outline:2px solid var(--rust); outline-offset:1px;}
-  form.contact-form textarea{resize:vertical; min-height:96px;}
-  form.contact-form button{
-    margin-top:6px; align-self:flex-start;
-    background:var(--ink); color:var(--paper);
-    border:none; padding:14px 26px; font-family:'JetBrains Mono', monospace;
-    font-size:0.9rem; letter-spacing:0.02em; cursor:pointer; transition:transform .15s ease;
-  }
-  form.contact-form button:hover{transform:translateY(-2px);}
-  .form-hint{font-size:0.82rem; color:#8a765f; font-style:italic; font-family:'Fraunces', serif;}
+  /* ---------- INTRO / PERSONAL NOTE ---------- */
+  .intro-note{padding:88px 0 40px;}
+  .intro-note .wrap{max-width:640px;}
+  .intro-note .kicker{font-size:0.9rem; color:var(--timber); margin-bottom:12px;}
+  .intro-note p{font-family:'Cormorant Garamond', serif; font-size:1.5rem; font-style:italic; line-height:1.5; color:var(--ink);}
+  .intro-note .attribution{margin-top:18px; font-family:'Manrope', sans-serif; font-style:normal; font-size:0.92rem; color:var(--ink-soft);}
 
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--ink); color:#cfc4ac; padding:34px 0; font-family:'JetBrains Mono', monospace; font-size:0.78rem; border-top:2px solid var(--rust);}
+  /* ---------- SERVICE TILES ---------- */
+  .tiles{padding:40px 0 88px;}
+  .tile-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:760px){ .tile-grid{grid-template-columns:1fr;} }
+  .tile{
+    background:var(--card); border:1px solid var(--line); padding:36px;
+    display:flex; flex-direction:column; gap:14px; text-decoration:none; color:inherit;
+    transition:border-color 150ms ease, transform 150ms var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){ .tile:hover{transform:translateY(-3px); border-color:var(--timber);} }
+  .tile .tile-icon{width:38px; height:38px;}
+  .tile h3{font-size:1.5rem;}
+  .tile p{font-size:0.98rem; color:var(--ink-soft);}
+  .tile .go{margin-top:auto; font-size:0.92rem; color:var(--timber); font-weight:600;}
+
+  /* ---------- TRADE SECTIONS ---------- */
+  .trade{padding:80px 0; border-top:1px solid var(--line);}
+  .trade.tint{background:var(--stone);}
+  .trade-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px;}
+  @media (max-width:820px){ .trade-grid{grid-template-columns:1fr; gap:32px;} }
+  .trade-label{font-size:0.9rem; color:var(--timber); margin-bottom:10px;}
+  .trade h2{font-size:clamp(1.8rem,3.2vw,2.4rem); max-width:16ch;}
+  .trade .intro{margin-top:16px; max-width:46ch; font-size:1.04rem; color:var(--ink-soft);}
+
+  table.wood-table{width:100%; border-collapse:collapse; margin-top:8px;}
+  table.wood-table th, table.wood-table td{text-align:left; padding:14px 10px; border-bottom:1px solid var(--line); font-size:0.96rem;}
+  table.wood-table th{font-weight:600; color:var(--ink-soft); font-size:0.82rem; border-bottom:1px solid var(--ink);}
+  table.wood-table td.wood-name{font-family:'Cormorant Garamond', serif; font-size:1.2rem; font-weight:600;}
+  .price-line{margin-top:22px; padding-top:18px; border-top:1px solid var(--line); display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .price-line .amount{font-family:'Cormorant Garamond', serif; font-size:2.1rem; color:var(--timber); font-weight:600;}
+  .price-line .amount-unit{font-size:0.94rem; color:var(--ink-soft);}
+
+  ol.process{counter-reset:step; margin:24px 0 0; padding:0; list-style:none;}
+  ol.process li{counter-increment:step; position:relative; padding:16px 0 16px 40px; border-bottom:1px solid var(--line); font-size:0.98rem;}
+  ol.process li:last-child{border-bottom:none;}
+  ol.process li::before{content:counter(step); position:absolute; left:0; top:14px; font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:var(--timber); font-weight:600;}
+  ol.process li strong{display:block; color:var(--ink); font-weight:600; margin-bottom:3px;}
+  ol.process li span{color:var(--ink-soft);}
+  .note-box{margin-top:24px; font-size:0.96rem; color:var(--ink-soft); border-left:2px solid var(--timber); padding-left:16px; max-width:48ch;}
+
+  dl.services{margin:8px 0 0;}
+  dl.services > div{display:grid; grid-template-columns:11rem 1fr; gap:20px; padding:16px 0; border-bottom:1px solid var(--line);}
+  dl.services > div:last-child{border-bottom:none;}
+  dl.services dt{font-family:'Cormorant Garamond', serif; font-size:1.2rem; font-weight:600; color:var(--ink);}
+  dl.services dd{margin:0; font-size:0.96rem; color:var(--ink-soft);}
+  @media (max-width:600px){ dl.services > div{grid-template-columns:1fr; gap:4px;} }
+  .services-note{margin-top:22px; font-size:0.92rem; color:var(--moss); max-width:50ch;}
+
+  /* ---------- KONTAKT ---------- */
+  #kontakt{padding:88px 0; border-top:1px solid var(--line);}
+  #kontakt .head{max-width:52ch;}
+  #kontakt h2{font-size:clamp(1.9rem,3.2vw,2.5rem);}
+  #kontakt .intro{margin-top:14px; font-size:1.02rem; color:var(--ink-soft);}
+  .kontakt-grid{margin-top:44px; display:grid; grid-template-columns:0.8fr 1.2fr; gap:52px;}
+  @media (max-width:820px){ .kontakt-grid{grid-template-columns:1fr;} }
+  .seller{border:1px solid var(--line); padding:26px; background:var(--card);}
+  .seller h3{font-size:1.4rem;}
+  .seller .role{font-size:0.88rem; color:var(--timber); margin-top:4px;}
+  .seller-list{margin-top:18px;}
+  .seller-list div{display:flex; justify-content:space-between; gap:10px; padding:9px 0; border-bottom:1px solid var(--line); font-size:0.92rem;}
+  .seller-list div:last-child{border-bottom:none;}
+  .seller-list span:first-child{color:var(--ink-soft);}
+  .seller-list span:last-child{font-weight:600; text-align:right;}
+
+  .message-wrap{display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows 260ms var(--ease-out), opacity 200ms ease;}
+  .message-wrap.open{grid-template-rows:1fr; opacity:1;}
+  .message-wrap > form{overflow:hidden; min-height:0;}
+  #contactForm{display:flex; flex-direction:column; gap:15px; border:1px solid var(--line); padding:26px; background:var(--card); margin-top:16px;}
+  @media (prefers-reduced-motion: reduce){ .message-wrap{transition:opacity 200ms ease;} }
+  #contactForm label{font-size:0.86rem; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px;}
+  #contactForm .req{color:var(--timber);}
+  #contactForm input, #contactForm select, #contactForm textarea{
+    font-family:'Manrope', sans-serif; font-size:0.98rem; padding:11px 12px; border:1px solid var(--line); background:#fffdf7; color:var(--ink); border-radius:2px;
+  }
+  #contactForm textarea{resize:vertical; min-height:96px;}
+  #contactForm .two-col{display:flex; gap:14px;}
+  @media (max-width:480px){ #contactForm .two-col{flex-direction:column;} }
+  #contactForm button{
+    margin-top:4px; align-self:flex-start; background:var(--evergreen); color:var(--card); border:none;
+    padding:13px 26px; font-weight:600; border-radius:3px; cursor:pointer; font-size:0.97rem;
+    transition:background 150ms ease, transform 120ms var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){ #contactForm button:hover{background:var(--timber);} }
+  #contactForm button:active{transform:scale(0.97);}
+  .form-hint{font-size:0.84rem; color:var(--ink-soft); font-style:italic;}
+  .pflicht-hint{font-size:0.82rem; color:var(--ink-soft); margin-top:2px;}
+  .confirm-msg{
+    border:1px solid var(--line); background:var(--card);
+    padding:26px; margin-top:16px;
+    display:flex; flex-direction:column; gap:6px;
+    opacity:0; transform:translateY(6px);
+    animation:riseIn 400ms var(--ease-out) forwards;
+  }
+  .confirm-msg[hidden]{display:none;}
+  .confirm-msg strong{font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:var(--evergreen); font-weight:600;}
+  .confirm-msg span{font-size:0.96rem; color:var(--ink-soft);}
+
+  footer{border-top:1px solid var(--line); padding:32px 0; font-size:0.86rem; color:var(--ink-soft);}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
 </head>
 <body>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span>BRENNHOLZ BUCHE</span><span class="mark">&mdash;</span><span>EICHE</span><span class="mark">&mdash;</span><span>GEMISCHT</span><span class="mark">&mdash;</span><span>25&nbsp;CM GESÄGT &amp; GESPALTEN</span><span class="mark">&mdash;</span><span>OFENFERTIG</span><span class="mark">&mdash;</span><span>130&nbsp;€ / SRM</span><span class="mark">&mdash;</span>
-    <span>BRENNHOLZ BUCHE</span><span class="mark">&mdash;</span><span>EICHE</span><span class="mark">&mdash;</span><span>GEMISCHT</span><span class="mark">&mdash;</span><span>25&nbsp;CM GESÄGT &amp; GESPALTEN</span><span class="mark">&mdash;</span><span>OFENFERTIG</span><span class="mark">&mdash;</span><span>130&nbsp;€ / SRM</span><span class="mark">&mdash;</span>
-  </div>
-</div>
-
 <header class="site">
   <div class="wrap navbar">
-    <div class="wordmark">PATYK<span class="dot">.</span>HOLZ</div>
+    <a href="#" class="wordmark">Patyk Holz &amp; Garten</a>
     <nav class="links">
-      <a href="#holz">HOLZ</a>
-      <a href="#lieferung">LIEFERUNG</a>
-      <a href="#garten">GARTEN</a>
-      <a href="#kontakt">KONTAKT</a>
+      <a href="#holz">Holz</a>
+      <a href="#garten">Garten</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="hero-tag">55576 SPRENDLINGEN</span>
-      <h1>Brennholz, roh<span class="line2">wie der Winter selbst.</span></h1>
-      <p class="lead">Buche und Eiche, gesägt und gespalten auf 25&nbsp;cm &mdash; ofenfertig für Kamin, Ofen oder Holzheizung. Wahlweise sortenrein oder gemischt.</p>
+  <svg class="hero-scene" viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e9c98f"/>
+        <stop offset="45%" stop-color="#d9a86f"/>
+        <stop offset="100%" stop-color="#8a7a4e"/>
+      </linearGradient>
+      <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#5c6b45"/>
+        <stop offset="100%" stop-color="#44543c"/>
+      </linearGradient>
+      <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#37452f"/>
+        <stop offset="100%" stop-color="#232c1d"/>
+      </linearGradient>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1b1608" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#1b1608" stop-opacity="0.55"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1400" height="620" fill="url(#sky)"/>
+    <circle cx="1080" cy="200" r="90" fill="#f4dca0" opacity="0.85"/>
+    <path d="M0,330 C220,270 380,310 560,300 C760,288 900,340 1100,300 C1240,275 1340,300 1400,290 L1400,620 L0,620 Z" fill="url(#hillBack)"/>
+    <path d="M0,420 C180,380 340,430 520,410 C740,385 940,440 1150,405 C1260,386 1340,400 1400,392 L1400,620 L0,620 Z" fill="url(#hillFront)"/>
+    <g opacity="0.9">
+      <ellipse cx="150" cy="470" rx="70" ry="18" fill="#161209" opacity="0.35"/>
+      <circle cx="120" cy="452" r="26" fill="#3a2a1c"/>
+      <circle cx="120" cy="452" r="26" fill="none" stroke="#5c4530" stroke-width="3"/>
+      <circle cx="120" cy="452" r="15" fill="none" stroke="#5c4530" stroke-width="2"/>
+      <circle cx="168" cy="460" r="22" fill="#2e2115"/>
+      <circle cx="168" cy="460" r="22" fill="none" stroke="#5c4530" stroke-width="3"/>
+      <circle cx="168" cy="460" r="12" fill="none" stroke="#5c4530" stroke-width="2"/>
+      <circle cx="150" cy="430" r="24" fill="#3a2a1c"/>
+      <circle cx="150" cy="430" r="24" fill="none" stroke="#5c4530" stroke-width="3"/>
+      <circle cx="150" cy="430" r="13" fill="none" stroke="#5c4530" stroke-width="2"/>
+    </g>
+    <g opacity="0.92">
+      <path d="M1180,500 C1160,440 1200,410 1230,440 C1250,400 1300,410 1300,450 C1330,440 1345,480 1320,500 Z" fill="#2b3624"/>
+      <path d="M1240,500 L1240,560" stroke="#2b3624" stroke-width="10"/>
+      <path d="M980,510 C965,470 995,450 1015,470 C1030,445 1065,455 1060,485 Z" fill="#37452f"/>
+      <path d="M1015,485 L1015,540" stroke="#37452f" stroke-width="8"/>
+    </g>
+    <rect x="0" y="470" width="1400" height="150" fill="url(#fade)"/>
+  </svg>
 
+  <div class="hero-copy">
+    <div class="wrap">
+      <span class="hero-tag">55576 Sprendlingen &middot; Rheinland-Pfalz</span>
+      <h1>Für den Winter gerüstet, für den Sommer gepflegt.</h1>
+      <p class="lead">Marcel Patyk versorgt Sprendlingen und Umgebung mit ofenfertigem Brennholz und übernimmt Arbeiten rund um Garten und Außenanlagen.</p>
       <div class="hero-actions">
-        <a href="#kontakt" class="btn-primary">NACHRICHT SCHREIBEN</a>
-        <span class="hero-note">Selbstabholung oder Lieferung nach Absprache</span>
-      </div>
-
-      <div class="badges">
-        <span class="badge">GEWERBLICHER ANBIETER</span>
-        <span class="badge">TOP ZUFRIEDENHEIT</span>
-        <span class="badge">ZUVERLÄSSIG</span>
-      </div>
-    </div>
-
-    <div class="stamp-wrap">
-      <div class="stamp">
-        <span class="amt">130€</span>
-        <span class="unit">PRO SCHÜTTRAUMMETER</span>
-        <span class="kind">Buche · Eiche · Mix</span>
+        <a href="#kontakt" class="btn">Nachricht schreiben</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="holz" class="deep diagonal-top">
+<div class="float-card">
+  <div class="inner">
+    <div class="stat"><strong>130 €</strong><span>pro Schüttraummeter, Buche &amp; Eiche</span></div>
+    <div class="stat"><strong>TOP Zufriedenheit</strong><span>Gewerblicher Anbieter, zuverlässig</span></div>
+    <div class="stat"><strong>Nach Absprache</strong><span>Selbstabholung oder Lieferung</span></div>
+  </div>
+</div>
+
+<section class="intro-note">
   <div class="wrap">
-    <div class="kicker">01 / DAS HOLZ</div>
-    <h2>Drei Sorten, ein Standard: 25&nbsp;cm, ofenfertig.</h2>
-    <p class="intro">Biete hochwertiges Brennholz aus Buche und Eiche gemischt, bereits auf 25&nbsp;cm gesägt und gespalten. Auf Wunsch auch sortenrein.</p>
+    <div class="kicker">Persönlich</div>
+    <p>&bdquo;Ich mache beides selbst &mdash; das Holz, das ich anbiete, und die Gärten, die ich pflege. Wer mich anschreibt, bekommt eine ehrliche Antwort und einen festen Termin.&ldquo;</p>
+    <div class="attribution">Marcel Patyk</div>
+  </div>
+</section>
 
-    <div class="tag-grid">
-      <div class="wood-tag">
-        <h3>Buche</h3>
-        <p>Dichtes, lang und heiß brennendes Hartholz &mdash; der Klassiker für Kamin und Ofen.</p>
-        <div class="spec">25 CM · OFENFERTIG</div>
-      </div>
-      <div class="wood-tag">
-        <h3>Eiche</h3>
-        <p>Sehr hoher Brennwert, brennt besonders lange &mdash; ideal für kalte Abende.</p>
-        <div class="spec">25 CM · OFENFERTIG</div>
-      </div>
-      <div class="wood-tag">
-        <h3>Buche &amp; Eiche gemischt</h3>
-        <p>Die wirtschaftliche Mischung beider Holzarten aus demselben Bestand.</p>
-        <div class="spec">25 CM · OFENFERTIG</div>
-      </div>
+<section class="tiles">
+  <div class="wrap tile-grid">
+    <a href="#holz" class="tile">
+      <svg class="tile-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="15" fill="none" stroke="#6d4a30" stroke-width="2"/><circle cx="20" cy="20" r="9" fill="none" stroke="#6d4a30" stroke-width="1.4"/><circle cx="20" cy="20" r="3" fill="none" stroke="#6d4a30" stroke-width="1.4"/></svg>
+      <h3>Brennholz</h3>
+      <p>Buche, Eiche oder gemischt &mdash; 25&nbsp;cm, gesägt und ofenfertig gespalten.</p>
+      <span class="go">Zu Holzarten &amp; Preis</span>
+    </a>
+    <a href="#garten" class="tile">
+      <svg class="tile-icon" viewBox="0 0 40 40" fill="none"><path d="M20 34V18M20 18C20 12 14 9 9 9C9 15 13 18 20 18ZM20 18C20 12 26 9 31 9C31 15 27 18 20 18Z" stroke="#5c6b45" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <h3>Garten- und Landschaftsbau</h3>
+      <p>Pflege, Rückschnitt, Wegebau und Gartengestaltung &mdash; nach Absprache.</p>
+      <span class="go">Zu den Leistungen</span>
+    </a>
+  </div>
+</section>
+
+<section class="trade" id="holz">
+  <div class="wrap trade-grid">
+    <div>
+      <div class="trade-label">Herbst &amp; Winter</div>
+      <h2>Brennholz aus Buche und Eiche</h2>
+      <p class="intro">Gesägt und gespalten auf 25 cm, ofenfertig für Kamin, Ofen oder Holzheizung. Wahlweise sortenrein oder gemischt.</p>
+      <ol class="process">
+        <li><strong>Nachricht schreiben</strong><span>Menge, Holzart und Wunschtermin kurz mitteilen.</span></li>
+        <li><strong>Rückmeldung erhalten</strong><span>Marcel bestätigt Menge, Preis und Termin.</span></li>
+        <li><strong>Holz erhalten</strong><span>Abholung in Sprendlingen oder kostenlose Lieferung im näheren Umkreis.</span></li>
+      </ol>
+      <p class="note-box">Im näheren Umkreis von Sprendlingen wird kostenlos geliefert. Bei größerer Entfernung ist Selbstabholung nötig, oder es fallen zusätzliche Kosten für die Anfahrt an.</p>
     </div>
-
-    <div class="checks">
-      <ul>
-        <li><span class="x">＋</span> Buche &amp; Eiche, wahlweise gemischt</li>
-        <li><span class="x">＋</span> Länge: ca. 25 cm</li>
-      </ul>
-      <ul>
-        <li><span class="x">＋</span> Gesägt &amp; ofenfertig gespalten</li>
-        <li><span class="x">＋</span> Ideal für Kamin, Ofen oder Holzheizung</li>
-      </ul>
-    </div>
-
-    <div class="pull-quote">
-      <span class="mark">&ldquo;</span>
-      <p>Biete hochwertiges Brennholz &mdash; bei Interesse gerne melden.</p>
+    <div>
+      <table class="wood-table">
+        <thead><tr><th>Holzart</th><th>Länge</th><th>Zustand</th></tr></thead>
+        <tbody>
+          <tr><td class="wood-name">Buche</td><td>25 cm</td><td>Gesägt &amp; gespalten, ofenfertig</td></tr>
+          <tr><td class="wood-name">Eiche</td><td>25 cm</td><td>Gesägt &amp; gespalten, ofenfertig</td></tr>
+          <tr><td class="wood-name">Buche &amp; Eiche gemischt</td><td>25 cm</td><td>Gesägt &amp; gespalten, ofenfertig</td></tr>
+        </tbody>
+      </table>
+      <div class="price-line">
+        <span class="amount">130&nbsp;€</span>
+        <span class="amount-unit">pro Schüttraummeter (SRM), für jede der drei Varianten</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="lieferung">
-  <div class="wrap">
-    <div class="kicker">02 / ABLAUF</div>
-    <h2>So kommt das Holz zu Ihnen.</h2>
-
-    <div class="steps">
-      <div class="step">
-        <div class="num">SCHRITT 01</div>
-        <h3>Nachricht schreiben</h3>
-        <p>Menge, Holzart und gewünschten Termin kurz mitteilen.</p>
-      </div>
-      <div class="step">
-        <div class="num">SCHRITT 02</div>
-        <h3>Abholung oder Lieferung klären</h3>
-        <p>Gemeinsam wird entschieden, ob Selbstabholung oder Lieferung sinnvoller ist.</p>
-      </div>
-      <div class="step">
-        <div class="num">SCHRITT 03</div>
-        <h3>Holz erhalten</h3>
-        <p>Abholung in Sprendlingen oder Lieferung nach Absprache.</p>
-      </div>
+<section class="trade tint" id="garten">
+  <div class="wrap trade-grid">
+    <div>
+      <div class="trade-label">Frühling &amp; Sommer</div>
+      <h2>Garten- und Landschaftsbau</h2>
+      <p class="intro">Neben Brennholz übernimmt Marcel auch Arbeiten rund um Garten und Außenanlagen &mdash; von der laufenden Pflege bis zu größeren Umgestaltungen.</p>
+      <p class="services-note">Genaue Leistungen, Preise und Einzugsgebiet werden ergänzt, sobald weitere Details vorliegen.</p>
     </div>
-
-    <p class="delivery-note">Im näheren Umkreis von Sprendlingen wird kostenlos geliefert. Bei größerer Entfernung ist Selbstabholung erforderlich, oder es fallen zusätzliche Kosten für die Anfahrt an.</p>
-  </div>
-</section>
-
-<section class="dark diagonal-top" id="garten">
-  <div class="wrap">
-    <div class="kicker">03 / ZWEITES STANDBEIN</div>
-    <h2>Garten- und Landschaftsbau</h2>
-    <p class="intro">Neben Brennholz übernehme ich auch Arbeiten rund um Garten und Außenanlagen &mdash; von der laufenden Pflege bis zu größeren Umgestaltungen.</p>
-
-    <div class="services">
-      <div class="service">
-        <div class="idx">01</div>
-        <h3>Rasen- &amp; Gartenpflege</h3>
-        <p>Regelmäßige Pflege, Mähen und Instandhaltung von Grünflächen.</p>
-      </div>
-      <div class="service">
-        <div class="idx">02</div>
-        <h3>Heckenschnitt &amp; Baumarbeiten</h3>
-        <p>Rückschnitt, Formschnitt und Fällarbeiten nach Absprache.</p>
-      </div>
-      <div class="service">
-        <div class="idx">03</div>
-        <h3>Pflaster- &amp; Wegebau</h3>
-        <p>Anlage und Ausbesserung von Wegen, Einfahrten und Terrassen.</p>
-      </div>
-      <div class="service">
-        <div class="idx">04</div>
-        <h3>Gartengestaltung</h3>
-        <p>Neuanlage und Umgestaltung von Beeten und Grünanlagen.</p>
-      </div>
+    <div>
+      <dl class="services">
+        <div><dt>Rasen- &amp; Gartenpflege</dt><dd>Regelmäßige Pflege, Mähen und Instandhaltung von Grünflächen.</dd></div>
+        <div><dt>Heckenschnitt &amp; Baumarbeiten</dt><dd>Rückschnitt, Formschnitt und Fällarbeiten nach Absprache.</dd></div>
+        <div><dt>Pflaster- &amp; Wegebau</dt><dd>Anlage und Ausbesserung von Wegen, Einfahrten und Terrassen.</dd></div>
+        <div><dt>Gartengestaltung</dt><dd>Neuanlage und Umgestaltung von Beeten und Grünanlagen.</dd></div>
+      </dl>
     </div>
-
-    <p class="placeholder-note">// Genaue Leistungen, Preise und Einzugsgebiet ergänze ich gern, sobald weitere Details vorliegen.</p>
   </div>
 </section>
 
 <section id="kontakt">
   <div class="wrap">
-    <div class="kicker">04 / KONTAKT</div>
-    <h2>Interesse? Einfach melden.</h2>
-
-    <div class="contact-grid">
-      <div class="receipt">
-        <div class="receipt-head">
-          <div class="monogram">MP</div>
-          <div>
-            <h3>Marcel Patyk</h3>
-            <div class="role">BRENNHOLZ &amp; GARTEN- UND LANDSCHAFTSBAU</div>
-          </div>
-        </div>
-        <div class="receipt-meta">
-          <div><span>STANDORT</span><span>55576 Sprendlingen</span></div>
-          <div><span>STATUS</span><span>Gewerblicher Anbieter</span></div>
-          <div><span>BEWERTUNG</span><span>TOP Zufriedenheit</span></div>
-          <div><span>PREIS HOLZ</span><span>130 € / SRM</span></div>
+    <div class="head">
+      <h2>Interesse? Einfach melden.</h2>
+      <p class="intro">Egal ob Brennholz oder Garten-Landschaftsbau &mdash; eine kurze Nachricht genügt.</p>
+    </div>
+    <div class="kontakt-grid">
+      <div class="seller">
+        <h3>Marcel Patyk</h3>
+        <div class="role">Brennholz &amp; Garten-Landschaftsbau</div>
+        <div class="seller-list">
+          <div><span>Standort</span><span>55576 Sprendlingen</span></div>
+          <div><span>Status</span><span>Gewerblicher Anbieter</span></div>
+          <div><span>Bewertung</span><span>TOP Zufriedenheit</span></div>
+          <div><span>Preis Brennholz</span><span>130 € / SRM</span></div>
         </div>
       </div>
-
-      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='NACHRICHT BEREIT ZUM VERSAND';">
-        <label>NAME
-          <input type="text" name="name" required>
-        </label>
-        <label>E-MAIL
-          <input type="email" name="email" required>
-        </label>
-        <label>NACHRICHT
-          <textarea name="message" placeholder="z. B. Menge, gewünschte Holzart, Wunschtermin ..." required></textarea>
-        </label>
-        <button type="submit">ANFRAGE SENDEN</button>
-        <p class="form-hint">Dieses Formular ist eine Vorlage ohne Versandanbindung &mdash; bitte E-Mail-Adresse oder Telefonnummer ergänzen, sobald verfügbar.</p>
-      </form>
+      <div>
+        <button type="button" id="openMessageBtn" class="btn dark">Nachricht schreiben</button>
+        <div class="message-wrap" id="messageWrap">
+        <form id="contactForm">
+          <label>Anlass <span class="req">*</span>
+            <select name="anlass" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="Brennholz-Anfrage">Brennholz-Anfrage</option>
+              <option value="Garten- und Landschaftsbau">Garten- und Landschaftsbau</option>
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </label>
+          <div class="two-col">
+            <label style="flex:1">Vorname <span class="req">*</span><input type="text" name="vorname" required></label>
+            <label style="flex:1">Nachname <span class="req">*</span><input type="text" name="nachname" required></label>
+          </div>
+          <label>E-Mail oder Telefonnummer <span class="req">*</span>
+            <input type="text" name="kontakt" placeholder="z. B. max@beispiel.de oder 0170 1234567" required>
+          </label>
+          <label>Nachricht
+            <textarea name="message" placeholder="z. B. Menge, gewünschte Holzart, Wunschtermin ..." required></textarea>
+          </label>
+          <button type="submit">Anfrage absenden</button>
+          <p class="form-hint">Ihre Anfrage wird direkt an Marcel Patyk gesendet.</p>
+          <p class="pflicht-hint"><span class="req">*</span> Pflichtfeld</p>
+        </form>
+        <div id="confirmMsg" class="confirm-msg" hidden>
+          <strong>Nachricht erfolgreich abgeschickt!</strong>
+          <span>Ihre Anfrage ist bei Marcel Patyk eingegangen. Er meldet sich in Kürze bei Ihnen.</span>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>PATYK HOLZ &amp; GARTEN &mdash; SPRENDLINGEN</span>
-    <span>ANGEBOT AUF BASIS EINER KLEINANZEIGE, UNVERBINDLICH</span>
+    <span>Patyk Holz &amp; Garten &mdash; Sprendlingen</span>
+    <span>Angebot auf Basis einer Kleinanzeige, unverbindlich</span>
   </div>
 </footer>
 
 <script>
   (function(){
     var links = Array.prototype.slice.call(document.querySelectorAll('nav.links a'));
-    var sections = links
-      .map(function(link){ return document.querySelector(link.getAttribute('href')); })
-      .filter(Boolean);
-
-    function setActive(id){
-      links.forEach(function(link){
-        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-      });
-    }
-
-    if ('IntersectionObserver' in window){
-      var observer = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting){ setActive(entry.target.id); }
-        });
-      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-      sections.forEach(function(sec){ observer.observe(sec); });
-    }
-
+    var sections = links.map(function(l){ return document.querySelector(l.getAttribute('href')); }).filter(Boolean);
     links.forEach(function(link){
       link.addEventListener('click', function(e){
         var target = document.querySelector(link.getAttribute('href'));
-        if (target){
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id); });
+          }
+        });
+      }, {rootMargin:'-40% 0px -55% 0px'});
+      sections.forEach(function(s){ io.observe(s); });
+    }
+  })();
+
+  (function(){
+    var MARCEL_EMAIL = "meindldennis@gmail.com"; // informativ – Zieladresse wird über den Web3Forms Access Key gesteuert
+    var openBtn = document.getElementById('openMessageBtn');
+    var form = document.getElementById('contactForm');
+    var wrap = document.getElementById('messageWrap');
+
+    openBtn.addEventListener('click', function(){
+      var isOpen = wrap.classList.contains('open');
+      wrap.classList.toggle('open', !isOpen);
+      openBtn.textContent = isOpen ? 'Nachricht schreiben' : 'Formular schließen';
+      if (!isOpen){
+        var confirmMsg = document.getElementById('confirmMsg');
+        if (!confirmMsg.hidden){
+          confirmMsg.hidden = true;
+          form.hidden = false;
+          form.reset();
         }
+        setTimeout(function(){ wrap.scrollIntoView({behavior:'smooth', block:'center'}); }, 120);
+      }
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+
+      var WEB3FORMS_KEY = "2ffbbf4a-0ce8-40ba-a6c7-3962ac0cfca5";
+
+      var payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: "Anfrage über die Website: " + data.get('anlass'),
+        anlass: data.get('anlass'),
+        name: data.get('vorname') + " " + data.get('nachname'),
+        kontakt: data.get('kontakt'),
+        nachricht: data.get('message')
+      };
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Wird gesendet …";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(result){
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Anfrage absenden";
+        form.hidden = true;
+        document.getElementById('confirmMsg').hidden = false;
+        openBtn.textContent = 'Nachricht schreiben';
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Anfrage absenden";
+        alert("Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt eine E-Mail.");
       });
     });
   })();
